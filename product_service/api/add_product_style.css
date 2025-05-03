@@ -1,0 +1,192 @@
+/* add_product_style_update.css */
+
+:root {
+    --primary-color: #052b4a;
+    --secondary-color: #6c757d;
+    --light-gray: #f8f9fa;
+    --border-color: #dee2e6;
+    --text-color: #343a40;
+    --success-color: #28a745;
+    --success-bg: #d4edda;
+    --main-font: "Times New Roman", Times, serif; /* Define Times New Roman as the main font */
+}
+
+body {
+    font-family: var(--main-font); /* Apply the main font to the body */
+    background-color: var(--light-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    font-family: var(--main-font); /* Apply to the container as well for consistency */
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    width: 95%;
+    max-width: 700px;
+    box-sizing: border-box;
+}
+
+h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    font-weight: normal; /* Times New Roman usually looks better with normal weight */
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold; /* Keep the label bold for emphasis */
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+input[type="file"] {
+    font-family: var(--main-font); /* Apply to form elements */
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: border-color 0.2s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus,
+input[type="file"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(var(--primary-color-rgb), 0.25);
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="currentColor" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position-x: 97%;
+    background-position-y: 50%;
+    padding-right: 35px;
+}
+
+select::-ms-expand {
+    display: none; /* For IE */
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+   
+    font-family: var(--main-font); /* Apply to number input specifically */
+}
+
+input[type="file"] {
+    font-family: var(--main-font); /* Apply to file input */
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    background-color: var(--light-gray);
+}
+
+small {
+    font-family: var(--main-font); /* Apply to small text */
+    display: block;
+    margin-top: 8px;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+button[type="submit"] {
+    font-family: var(--main-font); /* Apply to the submit button */
+    background-color: var(--primary-color);
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: normal; /* Adjust font weight if needed */
+    transition: background-color 0.2s ease-in-out;
+    width: 100%;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+button[type="submit"]:hover {
+    background-color: #073f6f;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+}
+
+p[style*="color: green"] {
+    font-family: var(--main-font); /* Apply to the success message */
+    background-color: var(--success-bg);
+    color: var(--success-color);
+    padding: 15px;
+    border: 1px solid var(--success-color);
+    border-radius: 6px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: normal; /* Adjust font weight if needed */
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .container {
+        padding: 30px;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-size: 0.95rem;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select,
+    input[type="file"],
+    button[type="submit"],
+    p[style*="color: green"] {
+        font-size: 0.95rem;
+        padding: 10px 12px;
+    }
+
+    select {
+        padding-right: 30px;
+        background-position-x: 95%;
+    }
+
+    small {
+        font-size: 0.85rem;
+    }
+}

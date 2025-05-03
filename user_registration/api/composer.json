@@ -1,0 +1,20 @@
+{
+    "name": "yezina/api",
+    "description": "ecommerce website",
+    "type": "project",
+    "require": {
+        "phpmailer/phpmailer": "^6.9",
+        "firebase/php-jwt": "^6.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "Yezina\\Api\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "yezina"
+        }
+    ],
+    "minimum-stability": "stable"
+}

@@ -1,0 +1,148 @@
+/* footer_styles.css */
+
+footer {
+    background-color: #052b4a; /* Dark blue background */
+    padding: 15px; /* Slightly reduced top/bottom padding */
+    font-size: 0.9rem; /* Slightly smaller base font */
+    color: #fff; /* White text */
+    border-top: 1px solid #073e69; /* Slightly lighter shade for border */
+    line-height: 1.4; /* Slightly reduced line height */
+    width: 100%; /* Ensure full width */
+    box-sizing: border-box; /* Include padding and border in width */
+    /* Remove fixed positioning if you want it to scroll with content */
+    /* position: fixed;
+    bottom: 0; */
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Even smaller min-width */
+    gap: 10px; /* Further reduced gap */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px; /* Add some padding to the container */
+}
+
+.footer-section {
+    margin-bottom: 10px; /* Further reduced bottom margin */
+}
+
+.footer-section h3 {
+    font-size: 1rem; /* Even smaller heading */
+    color: #fff; /* White heading color */
+    margin-top: 0;
+    margin-bottom: 6px; /* Further reduced bottom margin */
+    border-bottom: none; /* Removed the line below the heading */
+    padding-bottom: 0; /* Removed padding below the heading */
+}
+
+.footer-section p {
+    font-size: 0.85rem; /* Even smaller paragraph text */
+    color: #eee; /* Slightly off-white for paragraph text */
+    margin-bottom: 5px; /* Further reduced bottom margin */
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 4px; /* Further reduced bottom margin */
+}
+
+.footer-section ul li a {
+    color: #ddd; /* Light gray for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.85rem; /* Even smaller link text */
+}
+
+.footer-section ul li a:hover {
+    color: #fff; /* White on hover */
+}
+
+.social-links {
+    margin-top: 8px; /* Further reduced top margin */
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 6px; /* Further reduced margin */
+}
+
+.social-links img {
+    width: 20px; /* Even smaller size */
+    height: 20px; /* Even smaller size */
+    vertical-align: middle;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.social-links img:hover {
+    opacity: 1;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 12px; /* Further reduced margin */
+    padding-top: 8px; /* Further reduced padding */
+    border-top: 1px solid #073e69; /* Slightly lighter shade for border */
+    color: #bbb; /* Light gray for copyright text */
+    font-size: 0.8rem; /* Even smaller font size */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr; /* Stack on smaller screens */
+        padding: 20px; /* Add more padding on smaller screens for better spacing */
+    }
+
+    .footer-section {
+        margin-bottom: 15px; /* Add more bottom margin for better separation */
+        text-align: center; /* Center text in sections on smaller screens */
+    }
+
+    .footer-section h3 {
+        font-size: 1.1rem; /* Slightly larger heading on smaller screens */
+    }
+
+    .social-links {
+        text-align: center; /* Center social links on smaller screens */
+    }
+
+    .copyright {
+        font-size: 0.85rem; /* Slightly larger copyright text on smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    footer {
+        padding: 20px 10px; /* Adjust padding further for very small screens */
+        font-size: 0.95rem; /* Slightly increase font size for readability */
+    }
+
+    .footer-container {
+        padding: 15px 5px; /* Adjust container padding */
+    }
+
+    .footer-section h3 {
+        font-size: 1.05rem; /* Further adjust heading size */
+    }
+
+    .footer-section p,
+    .footer-section ul li a {
+        font-size: 0.9rem; /* Adjust paragraph and link text size */
+    }
+
+    .social-links img {
+        width: 22px; /* Slightly larger social icons */
+        height: 22px;
+    }
+
+    .copyright {
+        font-size: 0.9rem; /* Adjust copyright text size */
+    }
+}

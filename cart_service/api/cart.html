@@ -1,0 +1,99 @@
+<?php
+session_start();
+
+// Check if the user is logged in (you might already have this logic)
+if (!isset($_SESSION['product_service_logged_in']) || $_SESSION['product_service_logged_in'] !== true) {
+    header("Location: http://localhost/user_registration/api/login.php"); // Redirect to login page
+    exit;
+}
+
+$email = $_SESSION['product_service_email'];
+$userId = $_SESSION['product_service_user_id'];
+$authToken = $_SESSION['product_service_auth_token'];
+
+// API endpoint URL
+$api_url = 'http://localhost/cart_service/api/get_cart_items.php';
+
+// Initialize cURL session
+$ch = curl_init($api_url);
+
+// Set cURL options
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, [
+    'Authorization: Bearer ' . $authToken,
+    'Content-Type: application/json' // Important: Set Content-Type
+]);
+
+// Execute the cURL request
+$response = curl_exec($ch);
+
+// Check for cURL errors
+if (curl_errno($ch)) {
+    echo 'cURL error: ' . curl_error($ch);
+    exit;
+}
+
+// Get HTTP status code
+$http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+// Close cURL session
+curl_close($ch);
+
+// Check HTTP status code
+if ($http_code !== 200) {
+    echo "Error: API request failed with status code " . $http_code . "<br>";
+    echo "Response: " . $response;
+    exit;
+}
+
+// Decode the JSON response
+$cart_items = json_decode($response, true);
+
+// Check if decoding was successful
+if ($cart_items === null && json_last_error() !== JSON_ERROR_NONE) {
+    echo 'Error decoding JSON: ' . json_last_error_msg();
+    exit;
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="cart_style.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <h1>Shopping Cart</h1>
+
+    <?php if (empty($cart_items)): ?>
+        <p>Your cart is empty.</p>
+    <?php else: ?>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Image</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($cart_items as $item): ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($item['product_name']); ?></td>
+                        <td><img src="<?php echo htmlspecialchars($item['image_path']); ?>" alt="<?php echo htmlspecialchars($item['product_name']); ?>" width="50"></td>
+                        <td><?php echo htmlspecialchars($item['quantity']); ?></td>
+                        <td>$<?php echo number_format($item['price'], 2); ?></td>
+                        <td>$<?php echo number_format($item['price'] * $item['quantity'], 2); ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php endif; ?>
+
+    <a href="http://localhost/product_service/api/home_page.php">Continue Shopping</a>
+</body>
+</html>

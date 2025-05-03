@@ -1,0 +1,138 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.4; /* Further reduce line height */
+    margin: 0;
+    padding: 15px; /* Reduce body padding */
+    font-size: 0.85em; /* Further reduce base font size */
+}
+
+.profile-container {
+    width: 55%; /* Further reduce container width */
+    margin: 25px auto; /* Adjust vertical margin */
+    padding: 20px; /* Reduce container padding */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Even subtler shadow */
+}
+
+h2 {
+    color: #2c3e50;
+    font-size: 1.6em; /* Further reduce heading size */
+    margin-bottom: 15px; /* Reduce heading margin */
+    border-bottom: 1px solid #ddd; /* Thinner heading divider */
+    padding-bottom: 6px; /* Reduce heading padding */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h3 {
+    color: #34495e;
+    font-size: 1.2em; /* Further reduce subheading size */
+    margin-top: 20px; /* Reduce subheading top margin */
+    margin-bottom: 10px; /* Reduce subheading bottom margin */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Reduce profile info margin */
+    padding-bottom: 12px; /* Reduce profile info padding */
+    border-bottom: 0.6px solid #eee; /* Thinner profile info divider */
+}
+
+.profile-image {
+    width: 70px; /* Further reduce profile image size */
+    height: 70px; /* Further reduce profile image size */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px; /* Reduce profile image margin */
+    border: 1.5px solid #e0e0e0; /* Thinner profile image border */
+}
+
+.profile-info h3 {
+    margin-top: 0;
+    font-size: 1.3em; /* Further reduce email display size */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.form-group {
+    margin-bottom: 12px; /* Reduce form group margin */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 4px; /* Reduce label margin */
+    font-weight: 500;
+    color: #555;
+    font-size: 0.8em; /* Further reduce label font size */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.form-group input[type="password"],
+.upload-photo input[type="file"] {
+    width: 100%;
+    padding: 8px; /* Reduce input padding */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 2px; /* Reduce input margin */
+    font-size: 0.8em; /* Further reduce input text size */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.upload-photo button,
+.change-password button {
+    background-color: #052b4a;
+    color: white;
+    cursor: pointer;
+    padding: 8px 12px; /* Reduce button padding */
+    border: none;
+    border-radius: 5px;
+    font-size: 0.8em; /* Further reduce button text size */
+    transition: background-color 0.3s ease;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.upload-photo button:hover,
+.change-password button:hover {
+    background-color: #052b4a;
+}
+
+.message {
+    margin-top: 10px; /* Reduce message margin */
+    padding: 10px; /* Reduce message padding */
+    border-radius: 5px;
+    font-size: 0.8em; /* Further reduce message font size */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.success {
+    background-color: #e6ffe6;
+    color: #1a751a;
+    border: 1px solid #b3ffb3;
+}
+
+.error {
+    background-color: #ffe6e6;
+    color: #cc0000;
+    border: 1px solid #ffb3b3;
+}
+
+.logout-link {
+    margin-top: 15px; /* Reduce logout link margin */
+    text-align: center;
+    font-size: 0.8em; /* Further reduce logout link font size */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.logout-link a {
+    color: #052b4a;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.logout-link a:hover {
+    color: #052b4a;
+}

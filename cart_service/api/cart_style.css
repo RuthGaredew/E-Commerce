@@ -1,0 +1,188 @@
+/* cart_style.css */
+
+/* Basic Body Styling (Consider moving to a global stylesheet) */
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+/* Cart Title */
+h1 {
+    text-align: center;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Image Styling */
+img {
+    vertical-align: middle;
+}
+
+/* Cart Container (if you're still using one) */
+.cart-container {
+  width: 90%;
+  max-width: 900px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Cart Items Section */
+.cart-items {
+  margin-bottom: 20px;
+}
+
+/* Individual Cart Item */
+.cart-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 15px 0;
+}
+
+/* Item Image */
+.item-image {
+  width: 100px;
+  margin-right: 15px;
+}
+
+.item-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Item Details */
+.item-details {
+  flex-grow: 1;
+}
+
+.item-details .item-name {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.item-details .item-price {
+  font-weight: bold;
+  color: #4CAF50; /* Green for price */
+}
+
+/* Item Quantity */
+.item-quantity {
+  margin-top: 5px;
+}
+
+.item-quantity label {
+  margin-right: 5px;
+}
+
+.item-quantity input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Item Actions (Remove Button) */
+.item-actions {
+  margin-left: auto; /* Push to the right */
+}
+
+.item-actions .remove-item {
+  background-color: #f44336; /* Red for remove */
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.item-actions .remove-item:hover {
+  background-color: #d32f2f;
+}
+
+/* Cart Summary Section */
+.cart-summary {
+  text-align: right;
+}
+
+.cart-summary p {
+  margin: 8px 0;
+  font-size: 1.1em;
+}
+
+.cart-summary .total {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.cart-summary .total-amount {
+  color: #4CAF50; /* Green for total amount */
+}
+
+/* Checkout Button */
+.cart-summary .checkout-button {
+  background-color: #4CAF50; /* Green for checkout */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1em;
+  margin-top: 10px;
+}
+
+.cart-summary .checkout-button:hover {
+  background-color: #388E3C;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+  .cart-container {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .item-image {
+    width: 80px;
+    margin-bottom: 10px;
+  }
+
+  .item-details {
+    width: 100%;
+  }
+
+  .item-actions {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .cart-summary {
+    text-align: center;
+  }
+}
